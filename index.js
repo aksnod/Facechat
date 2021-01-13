@@ -3,6 +3,7 @@ const port=8000;
 
 const app=express();
 
+// routing the Express
 app.use('/', require('./routes'));
 
 
