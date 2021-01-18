@@ -1,9 +1,9 @@
 //including library
 const mongoose=require('mongoose');
-const { model } = require('../../contact_list/models/contact');
+
 
 //connect to databse
-mongoose.connect('mongodb://localhost/contact_list_db')
+mongoose.connect('mongodb://localhost/codian_developement');
 
 // acquire the  connection and(to check if it is successfully or not)
 const db=mongoose.connection
