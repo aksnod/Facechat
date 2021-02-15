@@ -62,8 +62,10 @@ User.findOne({email:req.body.email},function(err,user){
     if(user){
 
         //handle password doesn't match
-        if(user.password!=req.body.password)
-        return redirect('back');
+        if(user.password!=req.body.password){
+            console.log('password is incorrect');
+         return redirect('back');
+        }
         //handle session creation
         res.cookie('user_id',user.id);
         return res.redirect('/users/profile');
@@ -77,4 +79,14 @@ User.findOne({email:req.body.email},function(err,user){
 
 
 
+}
+
+//logout
+module.exports.logOut=function(req,res)
+{
+     //destroy session data
+  req.session = null;
+
+  // redirect to homepage
+  res.redirect('/');
 }
