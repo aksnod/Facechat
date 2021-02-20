@@ -1,3 +1,20 @@
 <link rel="stylesheet" href="/css/home.css">
 
 <h1>Welcome to Homepage</h1>
+<section id="feed-post">
+    <h4>Posts</h4>
+    <form action="/posts/create" method="post" id="new-post">
+        <textarea name="content"  cols="30" rows="4" placeholder="write here......"></textarea>
+        <button type="submit">post</button>
+    </form>
+</section>
+<div>
+<ul>
+    <% for(post of  allPost) { %>
+        <p>
+        <li><%= post.content %></li>
+        <small><%=post.user.name%></small>
+    </p>
+    <%} %>
+</ul>
+</div>
