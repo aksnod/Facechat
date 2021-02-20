@@ -1,0 +1,25 @@
+div {
+  display: flex;
+  height: 60px;
+  width: 100%;
+  background-color: #b492d4;
+  flex-direction: row; }
+  div #logo {
+    height: 100%;
+    width: 100px;
+    background-color: aqua;
+    align-items: flex-start; }
+  div #menu {
+    height: 100%;
+    display: flex;
+    font-size: 30px; }
+    div #menu div {
+      height: auto;
+      width: 200px;
+      font-size: auto;
+      background-color: lightcyan;
+      align-items: flex-end; }
+    div #menu a {
+      text-decoration: none; }
+    div #menu a:hover {
+      color: lawngreen; }

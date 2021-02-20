@@ -1,0 +1,40 @@
+div{
+    display: flex;
+    height: 60px;
+    width: 100%;
+    background-color: rgb(180, 146, 212);
+   flex-direction: row;
+    
+    #logo{
+        height: 100%;
+        width: 100px;
+        background-color: aqua;
+        align-items: flex-start;
+       
+        
+    }
+    #menu{
+        height: 100%;
+        display: flex;
+        
+        font-size: 30px;
+       
+        
+        div{
+            height: auto;
+            width: 200px;
+            font-size: auto;
+            background-color: lightcyan;
+            align-items: flex-end;
+        }
+        a{
+            text-decoration: none;
+            
+        }
+        a:hover{
+            color: lawngreen;
+        }
+       
+       
+    }
+}

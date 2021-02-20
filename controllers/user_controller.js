@@ -1,3 +1,4 @@
+const passport = require('passport');
 const User=require('../models/user');
 //render the user profile page
 module.exports.profile=function(req,res){
@@ -40,7 +41,15 @@ module.exports.create=function(req,res){
     });
 }
 
-//sig in and create a session
+//sign in and create a session
 module.exports.createSession=function(req,res){
+    return res.redirect('/');
 
+}
+
+//destroy session
+module.exports.destroySession=function(req,res)
+{
+    req.logout();
+    return res.redirect('/');
 }

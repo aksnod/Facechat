@@ -1,6 +1,9 @@
 <html>
     <head>
         <title>Codial |<%= title %></title>
+        <link rel="stylesheet" href="/css/layout.css">
+        <link rel="stylesheet" href="/css/header.css">
+        <link rel="stylesheet" href="/css/footer.css">
         <%- style %>
     </head>
     <body>
@@ -9,8 +12,9 @@
                                                     </header> -->
         <%- include('_header'); %>
         
-
-        <%- body %>                                                        <!-- <footer>
+        <main>
+         <%- body %>
+       </main>                                                        <!-- <footer>
                                                                     <h1>This is footer</h1>
                                                                 </footer> -->
         <%- include('_footer'); %>
