@@ -1,4 +1,13 @@
 
-body{
-    background-color: rgb(153, 146, 51);
+#home{
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(235, 242, 245);
+    #post-display{
+        background-color: rgb(243, 226, 226);
+        b{
+            font-size: 20px;
+        }
+    }
 }

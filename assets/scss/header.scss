@@ -1,38 +1,43 @@
-div{
+header{
     display: flex;
-    height: 60px;
+    height: 70px;
     width: 100%;
     background-color: rgb(180, 146, 212);
-   flex-direction: row;
+   
     
     #logo{
         height: 100%;
-        width: 100px;
-        background-color: aqua;
-        align-items: flex-start;
+        width: 10%;
+        
+        font-size: 40px;
+        font-weight: bolder;
+        color: green;
+        
+        
        
         
     }
     #menu{
         height: 100%;
+        width: 90%;
         display: flex;
-        
-        font-size: 30px;
+        flex-direction: row-reverse;
        
-        
+        font-size: 30px;
         div{
-            height: auto;
-            width: 200px;
-            font-size: auto;
-            background-color: lightcyan;
-            align-items: flex-end;
+            display: flex;
+            padding: 10px;
+            
         }
+       
+       
         a{
             text-decoration: none;
+            color: whitesmoke;
             
         }
         a:hover{
-            color: lawngreen;
+            color:rgba(237, 238, 234, 0.473);
         }
        
        

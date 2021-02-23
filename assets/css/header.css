@@ -1,25 +1,25 @@
-div {
+header {
   display: flex;
-  height: 60px;
+  height: 70px;
   width: 100%;
-  background-color: #b492d4;
-  flex-direction: row; }
-  div #logo {
+  background-color: #b492d4; }
+  header #logo {
     height: 100%;
-    width: 100px;
-    background-color: aqua;
-    align-items: flex-start; }
-  div #menu {
+    width: 10%;
+    font-size: 40px;
+    font-weight: bolder;
+    color: green; }
+  header #menu {
     height: 100%;
+    width: 90%;
     display: flex;
+    flex-direction: row-reverse;
     font-size: 30px; }
-    div #menu div {
-      height: auto;
-      width: 200px;
-      font-size: auto;
-      background-color: lightcyan;
-      align-items: flex-end; }
-    div #menu a {
-      text-decoration: none; }
-    div #menu a:hover {
-      color: lawngreen; }
+    header #menu div {
+      display: flex;
+      padding: 10px; }
+    header #menu a {
+      text-decoration: none;
+      color: whitesmoke; }
+    header #menu a:hover {
+      color: rgba(237, 238, 234, 0.473); }

@@ -1,2 +1,9 @@
-body {
-  background-color: #999233; }
+#home {
+  margin: 0px auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #ebf2f5; }
+  #home #post-display {
+    background-color: #f3e2e2; }
+    #home #post-display b {
+      font-size: 20px; }

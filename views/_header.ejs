@@ -2,22 +2,22 @@
 
 
 
-
-<div id="header" > 
+<header id="header">
+ 
     <div id="logo">
-
+        codial
     </div>
     <div id="menu">
         <% if(locals.user){ %>
 
-    
-            <div><a href="/users/profile"> <%=user.name %></a></div>
             <div><a href="/users/sign-out"> sign-out</a></div>
+            <div><a href="/users/profile"> <%=user.name %></a></div>
+            
         
         <%} else{ %>
         <div><a href="/users/sign-in">sign-in</a></div>
         <div><a href="/users/sign-up">sign-up</a></div>
         <% } %>
     </div>
-</div>
+</header>
 

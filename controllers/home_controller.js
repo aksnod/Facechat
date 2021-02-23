@@ -1,5 +1,5 @@
 const { populate } = require('../models/post');
-const Posts=require('../models/post');
+const Post=require('../models/post');
 module.exports.home=function(req,res){
     console.log(req.cookies);
     res.cookie('user_id',25);
@@ -16,11 +16,17 @@ module.exports.home=function(req,res){
 
 
 //populate the user for further use
-Posts.find({}).populate('user').exec(function(err,posts){
+Post.find({}).populate('user').populate({
+   path:'comments',
+   populate:{
+       path:'user'
+   } 
+})
+.exec(function(err,posts){
     return res.render('home',{
         title:"Codian | Home",
-        allPost:posts
+        posts:posts
     });
-})
+});
    
 }
