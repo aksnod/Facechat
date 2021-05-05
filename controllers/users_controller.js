@@ -42,7 +42,7 @@ module.exports.create=function(req,res){
     return res.redirect('back');
     User.findOne({email: req.body.email},function(err,user){
         if(err){
-        console.log('error in finding user in signin');
+        console.log('error in finding user in Sign-In');
         return;}
         if(!user){
             User.create(req.body,function(err,user){
