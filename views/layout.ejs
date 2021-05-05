@@ -1,24 +1,47 @@
 <html>
-    <head>
-        <title>Codial |<%= title %></title>
-        <link rel="stylesheet" href="/css/layout.css">
-        <link rel="stylesheet" href="/css/header.css">
-        <link rel="stylesheet" href="/css/footer.css">
-        <%- style %>
-    </head>
-    <body>
-                                                    <!-- <header>
+  <head>
+    <title>Codial |<%= title %></title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link rel="stylesheet" href="/css/layout.css" />
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <%- style %>
+  </head>
+  <body>
+    <!-- <header>
                                                         <H1>This is a header</H1>
                                                     </header> -->
-        <%- include('_header'); %>
-        
-        <main>
-         <%- body %>
-       </main>                                                        <!-- <footer>
+    <%- include('_header'); %>
+
+    <main><%- body %></main>
+    <!-- <footer>
                                                                     <h1>This is footer</h1>
                                                                 </footer> -->
-        <%- include('_footer'); %>
+    <%- include('_footer'); %> <%- script %>
 
-        <%- script %>
-    </body>
+    <script>
+      <% if (flash.success && flash.success.length > 0) { %>
+         new Noty({
+           theme: "relax",
+           text:'<%= flash.success %>',
+           type: "success",
+           layput: "topRight",
+           timeout: 1500,
+         }).show();
+       <%}%>
+       <% if (flash.error && flash.error.length > 0) { %>
+         new Noty({
+           theme: "relax",
+           text:'<%= flash.error %>',
+           type: "error",
+           layput: "topRight",
+           timeout: 1500,
+         }).show();
+       <%}%>
+    </script>
+  </body>
 </html>
