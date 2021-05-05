@@ -2,12 +2,22 @@
 #home{
     margin: 0px auto;
     display: flex;
-    flex-direction: column;
+    
     background-color: rgb(235, 242, 245);
     #post-display{
         background-color: rgb(243, 226, 226);
         b{
             font-size: 20px;
+            padding: 20px;
+            
+        }
+        #post-container{
+            padding-left: 10px;
+            border:5px double black;border-width: medium;
+        }
+        #all_usersList{
+            width: 20%;
+            height: 100%;
         }
     }
 }

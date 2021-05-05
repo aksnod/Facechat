@@ -11,7 +11,7 @@
         <% if(locals.user){ %>
 
             <div><a href="/users/sign-out"> sign-out</a></div>
-            <div><a href="/users/profile"> <%=user.name %></a></div>
+            <div><a href="/users/profile/<%=user._id%>"> <%=user.name %></a></div>
             
         
         <%} else{ %>

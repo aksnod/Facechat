@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="/css/home.css">
+<!-- <link rel="stylesheet" href="/css/home.css"> -->
 <main id="home">
-   
+   <section>
     <% if(locals.user){%>
         <div id="feed-post">
             <section>
@@ -13,34 +13,21 @@
     
         </div>
     <%}%>
+</section>
+<section>
     <div id="post-contentainer">
 
         <% for(post of  posts) { %>
-            <div id="post-display">
-                <p>
-                <b><%= post.content %></b>
-                <small>~<%=post.user.name%></small>
-            </p>
-            </div>
-            <% if(locals.user){ %>
-                <div id="post-comment-form">
-                    <form action="/comments/create" method="POST">
-                        <input type="text" name="content" placeholder="write comment here...." required>
-                        <input type="hidden" name="post" value="<%= post._id %>">
-                        <input type="submit" value="add comment">
-                    </form>
-                </div>
-                <%}%>
-            <div id="post-comment-list">
-                <% for(comment of  post.comments) { %>
-                    <ul id="post-comment-<%=post._id %>"></ul>
-                    <p>
-                        <%= comment.content %>
-                        <small>~<%=comment.user.name%></small>
-                    </p>
-                <% } %>
-            </div>
-        <% } %>    
-        
-    </div>
+
+            <%-include('_post')-%>
+
+        <% } %> 
+    
+</section>
+
+<section id="all_usersList">
+        <%for(u of allUsers){%>
+            <li><a href="users/profile/<%=u._id%>"><%=u.name%></a></li>
+        <%}%>
+</section>
 </main>

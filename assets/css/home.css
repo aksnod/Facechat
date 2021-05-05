@@ -1,9 +1,16 @@
 #home {
   margin: 0px auto;
   display: flex;
-  flex-direction: column;
   background-color: #ebf2f5; }
   #home #post-display {
     background-color: #f3e2e2; }
     #home #post-display b {
-      font-size: 20px; }
+      font-size: 20px;
+      padding: 20px; }
+    #home #post-display #post-container {
+      padding-left: 10px;
+      border: 5px double black;
+      border-width: medium; }
+    #home #post-display #all_usersList {
+      width: 20%;
+      height: 100%; }

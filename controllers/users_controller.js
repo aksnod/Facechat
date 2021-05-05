@@ -2,9 +2,25 @@ const passport = require('passport');
 const User=require('../models/user');
 //render the user profile page
 module.exports.profile=function(req,res){
-    res.render('user_profile',{
-        title:'Profile'
+    User.findById(req.params.id,function(err,user){
+        res.render('user_profile',{
+            title:'Profile',
+            user_profile:user
+        });
     });
+    
+}
+
+//update the user data
+module.exports.update=function(req,res){
+    if(req.params.id==req.user.id){
+        User.findByIdAndUpdate(req.params.id,req.body,function(err,user){
+            return res.redirect('back');
+        });
+    }
+    else{
+        res.status(401).send('unautherization');
+    }
 }
 
 //render the sign in page
