@@ -6,7 +6,7 @@
             <section>
                 <h4>Posts</h4>
                 <form action="/posts/create" method="post" id="new-post">
-                    <textarea name="content"  cols="30" rows="4" placeholder="write here......"></textarea>
+                    <textarea name="content"  cols="30" rows="4" placeholder="write here......" required></textarea>
                     <button type="submit">post</button>
                 </form>
             </section>
@@ -16,18 +16,22 @@
 </section>
 <section>
     <div id="post-contentainer">
-
+      <ul>
         <% for(post of  posts) { %>
 
             <%-include('_post')-%>
 
         <% } %> 
+    </ul>
     
 </section>
 
 <section id="all_usersList">
+    <ul>
         <%for(u of allUsers){%>
             <li><a href="users/profile/<%=u._id%>"><%=u.name%></a></li>
         <%}%>
+    </ul>
 </section>
 </main>
+<script src="/js/home_posts.js"></script>

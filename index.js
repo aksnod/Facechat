@@ -33,7 +33,7 @@ app.use(express.urlencoded());
 
 app.use(cookieParser());
 //include static file
-app.use(express.static("./assets"));
+app.use(express.static("./assets/"));
 
 app.use(expressLayout);
 

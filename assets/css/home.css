@@ -14,3 +14,5 @@
     #home #post-display #all_usersList {
       width: 20%;
       height: 100%; }
+      #home #post-display #all_usersList ul li a {
+        text-decoration: none; }
