@@ -1,5 +1,7 @@
 const passport = require("passport");
 const User = require("../models/user");
+const fs = require("fs");
+const path = require("path");
 //render the user profile page
 module.exports.profile = function (req, res) {
   User.findById(req.params.id, function (err, user) {
@@ -11,13 +13,40 @@ module.exports.profile = function (req, res) {
 };
 
 //update the user data
-module.exports.update = function (req, res) {
+module.exports.update = async function (req, res) {
+  // if (req.params.id == req.user.id) {
+  //   User.findByIdAndUpdate(req.params.id, req.body, function (err, user) {
+  //     req.flash("success", "updated successfully");
+  //     return res.redirect("back");
+  //   });
+  // } else {
+  //   req.flash("error", err);
+  //   res.status(401).send("unautherization");
+  // }
+
   if (req.params.id == req.user.id) {
-    User.findByIdAndUpdate(req.params.id, req.body, function (err, user) {
-      req.flash('success','updated successfully');
-      return res.redirect("back");
-    });
+    try {
+      let user = await User.findById(req.params.id);
+      User.uploadedAvatar(req, res, function (err) {
+        if (err) console.log("************multer error", err);
+        user.name = req.body.name;
+        user.email = req.body.email;
+        if (req.file) {
+          if (user.avatar) {
+            fs.unlinkSync(path.join(__dirname, "..", user.avatar));
+          }
+          user.avatar = User.avatarPath + "/" + req.file.filename;
+        }
+        user.save();
+        req.flash("success", "updated successfully");
+        return res.redirect("back");
+      });
+    } catch (error) {
+      req.flash("error", err);
+      return res.redirect(back);
+    }
   } else {
+    req.flash("error", err);
     res.status(401).send("unautherization");
   }
 };

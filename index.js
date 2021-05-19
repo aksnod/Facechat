@@ -34,7 +34,7 @@ app.use(express.urlencoded());
 app.use(cookieParser());
 //include static file
 app.use(express.static("./assets/"));
-
+app.use("/uploads", express.static(__dirname + "/uploads"));
 app.use(expressLayout);
 
 //extract style and script from subpages into layout
