@@ -8,6 +8,8 @@ const expressLayout = require("express-ejs-layouts");
 // use for session cookie
 const session = require("express-session");
 const passport = require("passport");
+// const passportJWT = require("passport-jwt");
+const passportJWT = require('./config/passport-jwt-strategy');
 const passportLocal = require("./config/passport-local-strategy");
 
 const db = require("./config/mongoose");
