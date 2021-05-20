@@ -17,6 +17,7 @@ passport.use(
       User.findOne({ email: profile.emails[0].value }).exec(function (
         err,
         user
+        
       ) {
         if (err) {
           console.log("error is google-passport strategy", err);
