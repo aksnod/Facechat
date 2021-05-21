@@ -1,6 +1,6 @@
 const nodeMailer = require("../config/nodemailer");
 
-exports.newCpmment = (comment) => {
+exports.newComment = (comment) => {
   //console.log("Inside the mailer");
   let htmlString = nodeMailer.renderTemplate(
     { comment: comment },
@@ -18,7 +18,7 @@ exports.newCpmment = (comment) => {
         console.log("error in publishing comment", err);
         return;
       }
-      console.log("mail delivered ", info);
+      // console.log("mail delivered ", info);
       return;
     }
   );
